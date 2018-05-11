@@ -5,7 +5,7 @@ This repo is for practicing git!
 Please:
 
 1. Fork this repo
-2. Make two changes, in *two separate commits*, to test.py in branch called "Branch_1"
+2. Make two changes, in *two separate commits*, to `test.py` in a branch called "Branch_1"
 
    **One of these changes must be the insertion of a new method between fizz_buzz and json_to_csv**
    
