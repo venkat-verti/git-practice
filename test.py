@@ -9,7 +9,7 @@ class TestClass(object):
         self.bar = bar
         self.baz = baz
 
-    def fizz_buzz(digit_1, digit_2):
+    def fizz_buzz(self, digit_1, digit_2):
         for i in range(1, 100):
             if i % digit_1 == 0:
                 if i % digit_2 == 0:
@@ -21,7 +21,7 @@ class TestClass(object):
             else:
                 print i
 
-    def json_to_csv(json_file_path, outfile_path):
+    def json_to_csv(self, json_file_path, outfile_path):
         """Convert a file containing a list of flat JSON objects to a csv.
 
         What's a DictWriter, you say? Never heard of it!
