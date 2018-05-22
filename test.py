@@ -34,6 +34,14 @@ class TestClass(object):
                 rows.extend([{field[i]:row[field[i]] for i in range(len(field))}])
             csv2json(rows, json_file)
 
+    #convert csv data to json data
+    def csv2json(data, jfile):
+        with open(jfile, 'w') as f:
+            json.dump(data, f, sort_keys = True, indent=4, separators=(',', ': '))
+
+    # call read_csv() that inturn calls csv2json()
+    read_csv(csv_file)
+
     def json_to_csv(self, json_file_path, outfile_path):
         """Convert a file containing a list of flat JSON objects to a csv.
 
