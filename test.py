@@ -22,7 +22,6 @@ class TestClass(object):
             else:
                 print i
 
-<<<<<<< HEAD
     def oh_this_is_trouble(self, param1, param2):
         """Oh man this fucntion is trouble"""
         for i in range(20):
@@ -31,7 +30,6 @@ class TestClass(object):
                 print i * j
 
     @staticmethod
-=======
     ''' introducing new methods - read_csv() and csv2json() '''
     csv_file= 'inputfile.csv'
     json_file = 'outputfile.json'
@@ -45,7 +43,14 @@ class TestClass(object):
                 rows.extend([{field[i]:row[field[i]] for i in range(len(field))}])
             csv2json(rows, json_file)
 
->>>>>>> add method read_csv()
+    #convert csv data to json data
+    def csv2json(data, jfile):
+        with open(jfile, 'w') as f:
+            json.dump(data, f, sort_keys = True, indent=4, separators=(',', ': '))
+
+    # call read_csv() that inturn calls csv2json()
+    read_csv(csv_file)
+
     def json_to_csv(self, json_file_path, outfile_path):
         """Convert a file containing a list of flat JSON objects to a csv.
 
