@@ -21,6 +21,19 @@ class TestClass(object):
             else:
                 print i
 
+    ''' introducing new methods - read_csv() and csv2json() '''
+    csv_file= 'inputfile.csv'
+    json_file = 'outputfile.json'
+
+    #read csv file
+    def read_csv(cfile):
+        rows = []
+        with open(cfile) as cf:
+            field = csv.DictReader(cf).fieldnames
+            for row in csv.DictReader(cf):
+                rows.extend([{field[i]:row[field[i]] for i in range(len(field))}])
+            csv2json(rows, json_file)
+
     def json_to_csv(self, json_file_path, outfile_path):
         """Convert a file containing a list of flat JSON objects to a csv.
 
